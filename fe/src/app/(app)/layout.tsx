@@ -119,9 +119,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               <div className="text-label-spatial-header text-neutral uppercase mb-2">Output</div>
               <div className="flex flex-col gap-1">
                 <Link 
-                  href="/gis" 
+                  href="/explorer" 
                   className={`px-3 py-1.5 font-semibold text-body-sm rounded-md transition-colors ${
-                    pathname === "/gis" 
+                    pathname === "/explorer" 
                       ? "bg-surface-container-low text-primary" 
                       : "text-neutral hover:bg-surface-container-low hover:text-primary"
                   }`}
