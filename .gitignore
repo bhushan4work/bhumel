@@ -43,3 +43,11 @@ yarn-error.log*
 .DS_Store
 *.swp
 *.swo
+
+# Temp and design files
+*.html
+*_jsx.txt
+convert_*.js
+generate_*.js
+fix_*.js
+parse_config.*
