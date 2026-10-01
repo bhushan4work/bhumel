@@ -1,0 +1,11 @@
+{
+  "name": "geosync",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix fe run dev",
+    "build": "npm --prefix fe run build",
+    "start": "npm --prefix fe run start",
+    "lint": "npm --prefix fe run lint"
+  }
+}
