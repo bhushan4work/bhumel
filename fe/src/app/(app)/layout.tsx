@@ -18,7 +18,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 <span className="w-2 h-2 bg-surface rounded-full"></span>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-headline-sm tracking-tight text-primary leading-none">BhuDrishti</span>
+                <span className="font-bold text-headline-sm tracking-tight text-primary leading-none">GeoSync</span>
                 <span className="text-[10px] text-neutral uppercase font-bold tracking-wider mt-0.5">Land Data Intelligence</span>
               </div>
             </div>
