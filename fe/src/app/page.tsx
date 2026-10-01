@@ -1,619 +1,347 @@
-"use client";
+import React from "react";
+import Link from "next/link";
 
-import React, { useState } from "react";
-
-export default function Page() {
-  const [visualMode, setVisualMode] = useState<'before' | 'after'>('after');
-
+export default function LandingPage() {
   return (
-    <>
-      <header className="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div className="h-20 w-full px-margin-desktop flex items-center justify-between"><div className="flex items-center gap-space-lg"><div className="flex items-center gap-space-sm cursor-pointer"><div className="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><span className="material-symbols-outlined text-[24px]">layers</span></div><div className="flex flex-col"><span className="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-tight">GeoSync</span><span className="font-label-spatial-header text-label-spatial-header text-secondary uppercase tracking-wider font-bold">Land Data Intelligence</span></div></div></div><nav className="hidden xl:flex items-center gap-space-md" data-active-classes="bg-surface-container-highest text-on-surface font-headline-sm font-semibold rounded-lg"><a aria-current="page" className="px-space-md py-space-sm transition-all bg-surface-container-highest text-on-surface font-headline-sm font-semibold rounded-lg" data-path="the-problem" href="#">The Problem</a><a className="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="how-it-works" href="#">How It Works</a><a className="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="multi-source-data" href="#">Multi-Source Data</a><a className="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="intelligent-reconcile" href="#">Intelligent Reconcile</a><a className="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="trust-and-traceability" href="#">Trust &amp; Traceability</a></nav><div className="flex items-center gap-space-md"><a className="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm rounded-lg font-body-sm text-body-sm font-semibold text-on-surface bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:bg-surface-container hover:text-on-surface transition-all" data-path="command-center" href="#">Command Center</a><a className="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg font-body-sm text-body-sm font-semibold bg-secondary text-on-secondary shadow-md hover:bg-secondary-container hover:text-on-secondary-container transition-all" data-path="workspace" href="#"><span>Open Workspace</span><span className="material-symbols-outlined text-[18px]">arrow_forward</span></a><div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span className="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main className="w-full pt-20 bg-surface"><div className="flex flex-col w-full">
-{/* SECTION 1: HERO VIEWPORT */}
-<section className="relative w-full px-margin-desktop py-space-xl flex flex-col items-center overflow-hidden">
-{/* Ambient Structural Grid Glow */}
-<div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[850px] h-[340px] bg-gradient-to-b from-secondary/10 via-secondary-container/5 to-transparent blur-3xl pointer-events-none -z-10"></div>
-{/* Category Pill Badge */}
-<div className="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-highest shadow-sm">
-<span className="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
-<span className="font-label-badge text-label-badge text-on-surface uppercase tracking-wide">Automated Integration &amp; Intelligent Harmonization of Geospatial Land Records</span>
-</div>
-{/* Main Headline & Subtitle */}
-<div className="max-w-4xl text-center mt-space-md">
-<h1 className="font-headline-xl text-headline-xl text-on-surface tracking-tight">
-        Harmonize the map. <span className="text-secondary">Resolve the record.</span>
-</h1>
-<p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mt-space-md">
-        Bring fragmented cadastral surveys, municipal GIS boundaries, and building footprints into one trusted, mathematically reconciled spatial registry.
-      </p>
-</div>
-{/* Action Buttons */}
-<div className="flex flex-wrap items-center justify-center gap-space-md mt-space-lg">
-<a className="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-secondary text-on-secondary font-headline-sm text-headline-sm font-semibold shadow-md hover:bg-secondary-container transition-all" href="#workspace">
-<span className="material-symbols-outlined text-[20px]">layers</span>
-<span>Open Harmonization Workspace</span>
-</a>
-<a className="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-headline-sm text-headline-sm font-semibold shadow-sm hover:bg-surface-container transition-all" href="#how-it-works">
-<span>See How It Works</span>
-<span className="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_downward</span>
-</a>
-</div>
-{/* Geospatial Hero Interactive Graphic Preview */}
-<div className="w-full max-w-5xl mt-space-xl bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden relative">
-{/* GIS Workspace Canvas Bar */}
-<div className="px-space-md py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
-<div className="flex items-center gap-space-md">
-<div className="flex items-center gap-1.5">
-<span className="w-2.5 h-2.5 rounded-full bg-cadastral-emerald"></span>
-<span className="w-2.5 h-2.5 rounded-full bg-variance-amber"></span>
-<span className="w-2.5 h-2.5 rounded-full bg-secondary"></span>
-</div>
-<span className="font-label-data-mono text-label-data-mono text-on-surface font-semibold tracking-wide">CANVAS://EPSG:4326/PARCEL-RECON-SURFACE</span>
-</div>
-<div className="flex items-center gap-space-sm font-label-data-mono text-label-badge text-on-surface-variant">
-<span className="px-2 py-0.5 rounded bg-surface-container">SCALE 1:500</span>
-<span className="px-2 py-0.5 rounded bg-surface-container">ZOOM 19.4x</span>
-<span className="px-2 py-0.5 rounded bg-cadastral-emerald-subtle text-cadastral-emerald font-bold">RTK GNSS LOCKED</span>
-</div>
-</div>
-{/* Vector Canvas Area with Floating Indicators */}
-<div className="relative w-full h-[420px] bg-slate-surface flex items-center justify-center p-space-lg select-none overflow-hidden">
-{/* Coordinate Grid Mesh */}
-<svg className="absolute inset-0 w-full h-full text-surface-container pointer-events-none" >
-<defs>
-<pattern height="48" id="cadastral-grid" patternUnits="userSpaceOnUse" width="48">
-<path d="M 48 0 L 0 0 0 48" fill="none" opacity="0.65" stroke="currentColor" strokeWidth="0.8" />
-<circle cx="0" cy="0" fill="currentColor" opacity="0.9" r="1.5" />
-</pattern>
-</defs>
-<rect fill="url(#cadastral-grid)" height="100%" width="100%" />
-</svg>
-{/* Dynamic Polygon Graphic SVG */}
-<svg className="relative w-full max-w-3xl h-[340px] z-10" fill="none" viewBox="0 0 760 340" >
-{/* Municipal GIS Polygon (Base with Slight Discrepancy) */}
-<polygon fill="#316bf3" fillOpacity="0.10" points="190,52 570,42 590,268 205,282" stroke="#0051d5" strokeDasharray="6 4" strokeWidth="2" />
-{/* Cadastral Legal Baseline Polygon */}
-<polygon fill="#059669" fillOpacity="0.14" points="175,70 545,60 565,255 190,270" stroke="#059669" strokeWidth="2.5" />
-{/* Variance Sliver Polygon Overlay (Delta zone) */}
-<polygon fill="#D97706" fillOpacity="0.45" points="545,60 570,42 590,268 565,255" stroke="#D97706" strokeWidth="1.8" />
-{/* Vertex Control Anchors */}
-<circle cx="175" cy="70" fill="#059669" r="4.5" stroke="#ffffff" strokeWidth="1.5" />
-<circle cx="545" cy="60" fill="#059669" r="4.5" stroke="#ffffff" strokeWidth="1.5" />
-<circle cx="565" cy="255" fill="#059669" r="4.5" stroke="#ffffff" strokeWidth="1.5" />
-<circle cx="190" cy="270" fill="#059669" r="4.5" stroke="#ffffff" strokeWidth="1.5" />
-{/* Centroid Pinpoints */}
-<circle cx="368" cy="162" fill="#059669" r="5" />
-<circle cx="388" cy="160" fill="#0051d5" r="5" />
-<line stroke="#ba1a1a" strokeDasharray="2 2" strokeWidth="1.5" x1="368" x2="388" y1="162" y2="160" />
-{/* Cadastral Parcel Label */}
-<foreignObject height="50" width="220" x="195" y="85">
-<div className="bg-surface-container-lowest/90 px-2 py-1 rounded shadow-sm flex flex-col" >
-<span className="font-label-badge text-[10px] text-cadastral-emerald font-bold tracking-tight">CADASTRAL SURVEY (P-102)</span>
-<span className="font-label-data-mono text-[11px] text-on-surface font-semibold">1,240 m² • EPSG:4326</span>
-</div>
-</foreignObject>
-{/* Municipal GIS Label */}
-<foreignObject height="50" width="230" x="270" y="210">
-<div className="bg-surface-container-lowest/90 px-2 py-1 rounded shadow-sm flex flex-col" >
-<span className="font-label-badge text-[10px] text-secondary font-bold tracking-tight">MUNICIPAL GIS (M-458)</span>
-<span className="font-label-data-mono text-[11px] text-on-surface font-semibold">1,256 m² • Zone R-2</span>
-</div>
-</foreignObject>
-{/* Delta Discrepancy Callout Pin */}
-<line stroke="#D97706" strokeWidth="1.5" x1="578" x2="630" y1="200" y2="180" />
-<circle cx="578" cy="200" fill="#D97706" r="4" />
-<foreignObject height="60" width="135" x="620" y="150">
-<div className="bg-variance-amber-subtle text-variance-amber px-2.5 py-1.5 rounded-lg shadow-sm" >
-<div className="font-label-badge text-[10px] uppercase font-bold tracking-wider">Spatial Sliver</div>
-<div className="font-label-data-mono text-label-data-mono font-bold leading-tight">Δ 16 m² Area Variance</div>
-</div>
-</foreignObject>
-</svg>
-{/* Floating Quick Tools Top-Left */}
-<div className="absolute top-space-md left-space-md flex flex-col gap-1.5 bg-surface-container-lowest/95 backdrop-blur-md p-1.5 rounded-lg shadow-md z-20">
-<button className="w-8 h-8 rounded flex items-center justify-center bg-secondary text-on-secondary shadow-sm" title="Pan &amp; Query">
-<span className="material-symbols-outlined text-[18px]">near_me</span>
-</button>
-<button className="w-8 h-8 rounded flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" title="Harmonize Geometry">
-<span className="material-symbols-outlined text-[18px]">straighten</span>
-</button>
-<button className="w-8 h-8 rounded flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" title="Sliver Detector">
-<span className="material-symbols-outlined text-[18px]">flare</span>
-</button>
-</div>
-{/* Coordinates HUD Bottom-Left */}
-<div className="absolute bottom-space-md left-space-md bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-1.5 rounded-lg shadow-sm font-label-data-mono text-[11px] text-on-surface-variant flex items-center gap-space-md z-20">
-<div><span className="text-secondary font-bold">LAT:</span> 28°36'44.12" N</div>
-<div><span className="text-secondary font-bold">LON:</span> 77°12'19.04" E</div>
-<div><span className="text-cadastral-emerald font-bold">IoU OVERLAP:</span> 86.4%</div>
-</div>
-</div>
-</div>
-</section>
-{/* SECTION 2: URBAN LAND CHALLENGE */}
-<section className="w-full px-margin-desktop py-space-xl">
-<div className="max-w-6xl mx-auto flex flex-col items-center text-center">
-<span className="font-label-spatial-header text-label-spatial-header text-secondary uppercase font-bold tracking-widest">URBAN LAND CHALLENGE</span>
-<h2 className="font-headline-lg text-headline-lg text-on-surface font-bold mt-space-xs tracking-tight">
-        Land data rarely tells one consistent story.
-      </h2>
-<p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-space-xs">
-        State Revenue Departments, Municipal Urban Local Bodies, and Building Registries describe the same physical ground with different geometries, discordant areas, and disjointed attributes.
-      </p>
-{/* Multi-Source Ingestion Pipeline Comparison Cards */}
-<div className="w-full grid grid-cols-1 md:grid-cols-3 gap-space-lg mt-space-xl text-left">
-{/* Source A */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
-<div>
-<div className="flex items-center justify-between">
-<span className="px-space-sm py-0.5 rounded font-label-badge text-label-badge bg-surface-container-high text-secondary font-bold">SOURCE A</span>
-<span className="font-label-data-mono text-label-badge text-on-surface-variant">Weight: 0.95</span>
-</div>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-md">Cadastral Survey</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-1">Deeded legal ground baseline holding state-authorized registration records.</p>
-</div>
-<div className="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg font-label-data-mono text-label-data-mono">
-<div className="text-on-surface font-bold">1,240 m²</div>
-<div className="text-on-surface-variant text-body-sm">Owner: Ramesh Sharma</div>
-</div>
-</div>
-{/* Source B */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
-<div>
-<div className="flex items-center justify-between">
-<span className="px-space-sm py-0.5 rounded font-label-badge text-label-badge bg-blueprint-blue text-secondary font-bold">SOURCE B</span>
-<span className="font-label-data-mono text-label-badge text-on-surface-variant">Weight: 0.82</span>
-</div>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-md">Municipal Property GIS</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-1">Civic assessment dataset maintaining utility connections and property tax zones.</p>
-</div>
-<div className="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg font-label-data-mono text-label-data-mono">
-<div className="text-on-surface font-bold">1,256 m²</div>
-<div className="text-on-surface-variant text-body-sm">Zone R-2 • ULB Ref: #4188</div>
-</div>
-</div>
-{/* Source C */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
-<div>
-<div className="flex items-center justify-between">
-<span className="px-space-sm py-0.5 rounded font-label-badge text-label-badge bg-surface-container-high text-on-surface font-bold">SOURCE C</span>
-<span className="font-label-data-mono text-label-badge text-on-surface-variant">Weight: 0.88</span>
-</div>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-md">Building Footprint</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-1">High-resolution structural vector layer derived from drone &amp; housing orthomosaics.</p>
-</div>
-<div className="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg font-label-data-mono text-label-data-mono">
-<div className="text-on-surface font-bold">Residential Villa</div>
-<div className="text-on-surface-variant text-body-sm">Built-up Ratio: 64.2%</div>
-</div>
-</div>
-</div>
-{/* Discrepancy Callout Notification Banner */}
-<div className="w-full mt-space-md p-space-md rounded-xl bg-variance-amber-subtle text-variance-amber flex items-center justify-center gap-space-sm shadow-sm">
-<span className="material-symbols-outlined text-[20px]">warning</span>
-<span className="font-headline-sm text-body-md font-bold">Discrepancies: Δ 16 m² Area Delta &amp; Slivers Detected</span>
-</div>
-{/* Reconciliation Engine Process Result Card */}
-<div className="w-full mt-space-sm p-space-md rounded-xl bg-surface-container-lowest shadow-md flex flex-col sm:flex-row items-center justify-between gap-space-md text-left">
-<div className="flex items-center gap-space-md">
-<div className="w-10 h-10 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0">
-<span className="material-symbols-outlined text-[22px]">auto_fix_high</span>
-</div>
-<div>
-<span className="font-label-spatial-header text-label-spatial-header text-secondary uppercase font-bold tracking-wider">GEOSYNC INTEGRATION &amp; RECONCILIATION CORE</span>
-<p className="font-headline-sm text-body-md text-on-surface font-bold leading-tight">Reconciles Geometry Baseline (Cadastral 0.95) &amp; Merges Validated Municipal Attributes</p>
-</div>
-</div>
-<div className="shrink-0">
-<span className="px-space-md py-1.5 rounded-full bg-cadastral-emerald-subtle text-cadastral-emerald font-label-badge text-label-badge font-bold">0.992 INTEGRITY SCORE</span>
-</div>
-</div>
-</div>
-</section>
-{/* SECTION 3: DETERMINISTIC WORKFLOW (7-STAGE PIPELINE) */}
-<section className="w-full bg-surface-container-low py-space-xl px-margin-desktop" id="how-it-works">
-<div className="max-w-6xl mx-auto flex flex-col">
-<div className="text-left">
-<span className="font-label-spatial-header text-label-spatial-header text-secondary uppercase font-bold tracking-widest">DETERMINISTIC WORKFLOW</span>
-<h2 className="font-headline-lg text-headline-lg text-on-surface font-bold mt-space-xs tracking-tight">How GeoSync Works</h2>
-<p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
-          A disciplined 7-stage spatial data pipeline combining mathematical scoring with transparent human-in-the-loop verification.
-        </p>
-</div>
-{/* Horizontal 7-Stage Flow Grid */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-space-sm mt-space-xl">
-{/* Step 1 */}
-<div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="font-label-data-mono text-secondary font-bold text-headline-sm">01</div>
-<h4 className="font-headline-sm text-body-md text-on-surface font-bold mt-space-xs">Upload</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">GeoJSON, SHP &amp; CSV Ingest</p>
-</div>
-<div className="mt-space-md">
-<span className="material-symbols-outlined text-secondary text-[22px]">upload_file</span>
-</div>
-</div>
-{/* Step 2 */}
-<div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="font-label-data-mono text-secondary font-bold text-headline-sm">02</div>
-<h4 className="font-headline-sm text-body-md text-on-surface font-bold mt-space-xs">Validate</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">CRS &amp; Topology Checks</p>
-</div>
-<div className="mt-space-md">
-<span className="material-symbols-outlined text-secondary text-[22px]">check_circle</span>
-</div>
-</div>
-{/* Step 3 */}
-<div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="font-label-data-mono text-secondary font-bold text-headline-sm">03</div>
-<h4 className="font-headline-sm text-body-md text-on-surface font-bold mt-space-xs">Standardize</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Canonical Schema Alignment</p>
-</div>
-<div className="mt-space-md">
-<span className="material-symbols-outlined text-secondary text-[22px]">reorder</span>
-</div>
-</div>
-{/* Step 4 */}
-<div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="font-label-data-mono text-secondary font-bold text-headline-sm">04</div>
-<h4 className="font-headline-sm text-body-md text-on-surface font-bold mt-space-xs">Match</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">IoU &amp; Centroid Proximity</p>
-</div>
-<div className="mt-space-md">
-<span className="material-symbols-outlined text-secondary text-[22px]">hub</span>
-</div>
-</div>
-{/* Step 5 */}
-<div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="font-label-data-mono text-secondary font-bold text-headline-sm">05</div>
-<h4 className="font-headline-sm text-body-md text-on-surface font-bold mt-space-xs">Detect</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Area &amp; Boundary Discrepancies</p>
-</div>
-<div className="mt-space-md">
-<span className="material-symbols-outlined text-secondary text-[22px]">troubleshoot</span>
-</div>
-</div>
-{/* Step 6 */}
-<div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="font-label-data-mono text-secondary font-bold text-headline-sm">06</div>
-<h4 className="font-headline-sm text-body-md text-on-surface font-bold mt-space-xs">Review</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Officer Audit &amp; Oversight</p>
-</div>
-<div className="mt-space-md">
-<span className="material-symbols-outlined text-secondary text-[22px]">fact_check</span>
-</div>
-</div>
-{/* Step 7 */}
-<div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="font-label-data-mono text-cadastral-emerald font-bold text-headline-sm">07</div>
-<h4 className="font-headline-sm text-body-md text-on-surface font-bold mt-space-xs">Harmonize</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Unified Certified Map Record</p>
-</div>
-<div className="mt-space-md">
-<span className="material-symbols-outlined text-cadastral-emerald text-[22px]">task_alt</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-{/* SECTION 4: INSTITUTIONAL SOURCES */}
-<section className="w-full px-margin-desktop py-space-xl">
-<div className="max-w-6xl mx-auto flex flex-col">
-<div className="text-left">
-<span className="font-label-spatial-header text-label-spatial-header text-secondary uppercase font-bold tracking-widest">INSTITUTIONAL SOURCES</span>
-<h2 className="font-headline-lg text-headline-lg text-on-surface font-bold mt-space-xs tracking-tight">Multi-Source Spatial Ingestion</h2>
-<p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
-          Harmonizing institutional layers into a standardized EPSG:4326 geometry representation.
-        </p>
-</div>
-{/* 4 High Density Ingestion Cards */}
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg mt-space-xl">
-{/* Cadastral Ingestion Card */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
-<div>
-<div className="flex items-center justify-between">
-<span className="px-2 py-0.5 rounded font-label-badge text-label-badge bg-cadastral-emerald-subtle text-cadastral-emerald font-bold">Cadastral Survey</span>
-<span className="font-label-data-mono text-label-badge text-on-surface-variant">Weight: 0.95</span>
-</div>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-md">State Land Revenue</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
-              Legal boundary ground measurements, plot numbers, deeded ownership titles, and revenue classifications.
+    <div className="min-h-screen bg-background font-sans selection:bg-secondary/20">
+      {/* HEADER */}
+      <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-border/50">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded bg-primary flex items-center justify-center text-surface shadow-sm">
+              <span className="material-symbols-outlined text-[20px]">layers</span>
+            </div>
+            <span className="font-bold text-headline-sm tracking-tight text-primary">GeoSync</span>
+          </div>
+          
+          <nav className="hidden md:flex items-center gap-6 text-body-sm font-medium text-neutral">
+            <Link href="#problem" className="hover:text-primary transition-colors">The Problem</Link>
+            <Link href="#solution" className="hover:text-primary transition-colors">How It Works</Link>
+            <Link href="#engine" className="hover:text-primary transition-colors">Reconciliation Engine</Link>
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <Link href="/dashboard" className="hidden sm:block text-body-sm font-medium text-primary hover:text-secondary transition-colors">
+              Command Center
+            </Link>
+            <Link href="/workspace" className="bg-primary text-surface px-4 py-2 rounded-md text-body-sm font-semibold shadow-sm hover:bg-primary/90 transition-all flex items-center gap-2">
+              Open Workspace
+              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <main className="w-full pt-16">
+        
+        {/* HERO SECTION - Centered, bold, map mockup below */}
+        <section className="relative w-full pt-24 pb-16 overflow-hidden">
+          {/* Subtle background grid */}
+          <div className="absolute inset-0 z-0 bg-[#F8FAFC]">
+            <svg className="absolute inset-0 w-full h-full text-border opacity-50" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1"></path>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#hero-grid)"></rect>
+            </svg>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center mt-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border shadow-sm mb-6 text-[11px] font-bold uppercase tracking-wider text-secondary">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              GeoSync Recon Engine v4.8 Live
+            </div>
+            <h1 className="text-5xl md:text-6xl font-extrabold text-primary tracking-tight leading-[1.1] mb-6">
+              Establish a single spatial truth for institutional land data.
+            </h1>
+            <p className="text-lg md:text-xl text-neutral max-w-2xl mb-10 leading-relaxed">
+              Automatically harmonize conflicting cadastral surveys, municipal records, and drone registries into a cryptographically auditable canonical baseline.
             </p>
-</div>
-<div className="mt-space-lg pt-space-md flex items-center justify-between">
-<span className="font-label-data-mono text-[11px] text-on-surface-variant">SHP / KML / CSV</span>
-<span className="material-symbols-outlined text-cadastral-emerald text-[20px]">account_balance</span>
-</div>
-</div>
-{/* Municipal GIS Ingestion Card */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
-<div>
-<div className="flex items-center justify-between">
-<span className="px-2 py-0.5 rounded font-label-badge text-label-badge bg-blueprint-blue text-secondary font-bold">Municipal GIS</span>
-<span className="font-label-data-mono text-label-badge text-on-surface-variant">Weight: 0.82</span>
-</div>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-md">Urban Local Body</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
-              Property tax assessment IDs, street addresses, postal codes, utility connections, and ward zoning rules.
-            </p>
-</div>
-<div className="mt-space-lg pt-space-md flex items-center justify-between">
-<span className="font-label-data-mono text-[11px] text-on-surface-variant">GeoJSON / WFS / REST</span>
-<span className="material-symbols-outlined text-secondary text-[20px]">domain</span>
-</div>
-</div>
-{/* Building Footprints Ingestion Card */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
-<div>
-<div className="flex items-center justify-between">
-<span className="px-2 py-0.5 rounded font-label-badge text-label-badge bg-variance-amber-subtle text-variance-amber font-bold">Building Footprints</span>
-<span className="font-label-data-mono text-label-badge text-on-surface-variant">Weight: 0.88</span>
-</div>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-md">Housing Registry</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
-              High-resolution structural outlines, built-up ground coverage, construction status, and occupancy metadata.
-            </p>
-</div>
-<div className="mt-space-lg pt-space-md flex items-center justify-between">
-<span className="font-label-data-mono text-[11px] text-on-surface-variant">LiDAR / Drone Ortho</span>
-<span className="material-symbols-outlined text-variance-amber text-[20px]">villa</span>
-</div>
-</div>
-{/* Satellite Extensibility Ingestion Card */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
-<div>
-<div className="flex items-center justify-between">
-<span className="px-2 py-0.5 rounded font-label-badge text-label-badge bg-surface-container-high text-on-surface font-bold">Extensibility</span>
-<span className="font-label-data-mono text-label-badge text-on-surface-variant">Architecture Ready</span>
-</div>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-md">Satellite &amp; GNSS Sensor</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
-              Future extensible ingestion pipeline for drone orthomosaics, satellite imagery, and high-accuracy GNSS field surveys.
-            </p>
-</div>
-<div className="mt-space-lg pt-space-md flex items-center justify-between">
-<span className="font-label-data-mono text-[11px] text-on-surface-variant">Sentinel / RTK Field API</span>
-<span className="material-symbols-outlined text-on-surface-variant text-[20px]">satellite_alt</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-{/* SECTION 5: VISUAL VERIFICATION (BEFORE VS AFTER) */}
-<section className="w-full bg-surface-container-low py-space-xl px-margin-desktop">
-<div className="max-w-6xl mx-auto flex flex-col">
-<div className="text-left">
-<span className="font-label-spatial-header text-label-spatial-header text-secondary uppercase font-bold tracking-widest">VISUAL VERIFICATION</span>
-<h2 className="font-headline-lg text-headline-lg text-on-surface font-bold mt-space-xs tracking-tight">Before vs After Harmonization</h2>
-<p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
-          Compare how overlapping, divergent source polygons are mathematically reconciled into a single certified spatial boundary.
-        </p>
-</div>
-{/* Verification Workspace Master Card */}
-<div className="w-full mt-space-lg bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden flex flex-col">
-{/* Interactive Mode Toggle Pill */}
-<div className="p-space-md bg-surface-container-lowest flex items-center justify-center">
-<div className="inline-flex p-1 bg-surface-container-high rounded-lg" id="verification-toggle">
-<button className="px-space-md py-1.5 rounded-md font-body-sm text-body-sm font-semibold transition-all text-on-surface-variant hover:text-on-surface" id="btn-before" >
-              Before: Multi-Source Divergence
-            </button>
-<button className="px-space-md py-1.5 rounded-md font-body-sm text-body-sm font-semibold transition-all bg-primary text-on-primary shadow-sm" id="btn-after" >
-              After: Certified Harmonized Result
-            </button>
-</div>
-</div>
-{/* Comparison Display: Vector Map & Certified Panel */}
-<div className="grid grid-cols-1 lg:grid-cols-12 min-h-[380px]">
-{/* Vector Map Display Canvas */}
-<div className="lg:col-span-7 bg-slate-surface p-space-lg relative flex items-center justify-center overflow-hidden">
-{/* Background Coordinate Grid */}
-<svg className="absolute inset-0 w-full h-full text-surface-container pointer-events-none" >
-<defs>
-<pattern height="40" id="recon-grid" patternUnits="userSpaceOnUse" width="40">
-<path d="M 40 0 L 0 0 0 40" fill="none" opacity="0.6" stroke="currentColor" strokeWidth="0.75" />
-</pattern>
-</defs>
-<rect fill="url(#recon-grid)" height="100%" width="100%" />
-</svg>
-{/* Vector Map: BEFORE VIEW (Multi-layer discordance) */}
-<div className={`relative w-full h-[320px] flex items-center justify-center ${visualMode === 'before' ? '' : 'hidden'}`}>
-<svg className="w-full h-full" fill="none" viewBox="0 0 500 300" >
-{/* Municipal polygon */}
-<polygon fill="#316bf3" fillOpacity="0.12" points="120,60 380,45 400,240 140,250" stroke="#0051d5" strokeDasharray="4 4" strokeWidth="2" />
-{/* Cadastral polygon */}
-<polygon fill="#059669" fillOpacity="0.15" points="105,75 360,65 375,230 120,240" stroke="#059669" strokeWidth="2.5" />
-{/* Conflict sliver */}
-<polygon fill="#E11D48" fillOpacity="0.3" points="360,65 380,45 400,240 375,230" stroke="#E11D48" strokeWidth="1.5" />
-<foreignObject height="48" width="220" x="110" y="85">
-<div className="bg-surface-container-lowest/90 px-2 py-1 rounded shadow-sm text-[11px] font-label-data-mono" >
-<span className="text-cadastral-emerald font-bold">Cadastral Baseline: 1,240 m²</span>
-</div>
-</foreignObject>
-<foreignObject height="48" width="220" x="180" y="190">
-<div className="bg-surface-container-lowest/90 px-2 py-1 rounded shadow-sm text-[11px] font-label-data-mono" >
-<span className="text-secondary font-bold">Municipal GIS: 1,256 m²</span>
-</div>
-</foreignObject>
-</svg>
-</div>
-{/* Vector Map: AFTER VIEW (Harmonized single polygon) */}
-<div className={`relative w-full h-[320px] flex items-center justify-center ${visualMode === 'after' ? '' : 'hidden'}`}>
-<svg className="w-full h-full" fill="none" viewBox="0 0 500 300" >
-{/* Harmonized Unified Polygon */}
-<polygon fill="#316bf3" fillOpacity="0.12" points="105,75 360,65 375,230 120,240" stroke="#0051d5" strokeWidth="2.5" />
-{/* Micro Boundary Pin Markers */}
-<circle cx="105" cy="75" fill="#0051d5" r="4.5" stroke="#ffffff" strokeWidth="1.5" />
-<circle cx="360" cy="65" fill="#0051d5" r="4.5" stroke="#ffffff" strokeWidth="1.5" />
-<circle cx="375" cy="230" fill="#0051d5" r="4.5" stroke="#ffffff" strokeWidth="1.5" />
-<circle cx="120" cy="240" fill="#0051d5" r="4.5" stroke="#ffffff" strokeWidth="1.5" />
-{/* Harmonized Center Plaque */}
-<foreignObject height="90" width="220" x="140" y="110">
-<div className="bg-surface-container-lowest/95 backdrop-blur-md p-3 rounded-lg shadow-md flex flex-col text-center" >
-<span className="font-label-badge text-label-badge text-secondary font-bold">HARM-P-102</span>
-<span className="font-headline-sm text-body-md font-bold text-on-surface mt-0.5">Certified Area: 1,240 m²</span>
-<span className="font-label-data-mono text-[11px] text-cadastral-emerald font-semibold mt-1 flex items-center justify-center gap-1">
-<span className="material-symbols-outlined text-[14px]">check</span>
-<span>Attributes Merged</span>
-</span>
-</div>
-</foreignObject>
-</svg>
-</div>
-</div>
-{/* Certified Single-Source-of-Truth Details */}
-<div className="lg:col-span-5 p-space-lg flex flex-col justify-between bg-surface-container-lowest">
-<div>
-<div className="flex items-center gap-space-xs">
-<span className="material-symbols-outlined text-cadastral-emerald text-[22px]">verified</span>
-<h3 className="font-headline-md text-headline-sm text-on-surface font-bold">Certified Single-Source-of-Truth</h3>
-</div>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
-                GeoSync’s M5 reconciliation engine resolved the conflict: cadastral geometry was preserved as the legal ground baseline (reliability 0.95), while MCD tax zones, addresses, and occupancy status were merged into a certified record.
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <Link href="/workspace" className="w-full sm:w-auto px-8 py-3.5 bg-secondary text-on-secondary rounded-lg font-semibold text-body-md shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                Launch Workspace
+                <span className="material-symbols-outlined text-[20px]">explore</span>
+              </Link>
+              <Link href="#solution" className="w-full sm:w-auto px-8 py-3.5 bg-surface text-primary border border-border rounded-lg font-semibold text-body-md hover:bg-surface-container-low transition-all">
+                See How It Works
+              </Link>
+            </div>
+          </div>
+
+          {/* Hero Mockup */}
+          <div className="max-w-6xl mx-auto px-6 mt-16 relative z-10 perspective-1000">
+            <div className="w-full h-[400px] md:h-[500px] bg-surface rounded-t-2xl border-x border-t border-border shadow-2xl overflow-hidden flex flex-col relative transform transition-transform hover:-translate-y-2 duration-500">
+              
+              {/* Fake Window Header */}
+              <div className="h-10 bg-surface border-b border-border flex items-center px-4 gap-2">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-conflict-rose"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-variance-amber"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-cadastral-emerald"></div>
+                </div>
+                <div className="mx-auto bg-background border border-border rounded text-[10px] font-mono px-4 py-0.5 text-neutral">
+                  geosync.gov.in/workspace/KHASRA-4482
+                </div>
+              </div>
+
+              {/* Map UI Mockup */}
+              <div className="flex-1 relative flex">
+                <div className="flex-1 bg-[#F8FAFC] relative overflow-hidden">
+                  <svg className="absolute inset-0 w-full h-full text-border/80" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <pattern id="mock-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                        <path d="M 30 0 L 0 0 0 30" fill="none" stroke="currentColor" strokeWidth="0.5"></path>
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#mock-grid)"></rect>
+                  </svg>
+                  
+                  {/* Geometry */}
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="200,100 500,80 550,300 250,320" fill="#059669" fillOpacity="0.1" stroke="#059669" strokeWidth="2"></polygon>
+                    <polygon points="180,90 490,70 560,290 230,310" fill="#2563EB" fillOpacity="0.1" stroke="#2563EB" strokeWidth="2" strokeDasharray="6 4"></polygon>
+                    {/* Hotspot */}
+                    <polygon points="200,100 180,90 490,70 500,80" fill="#E11D48" fillOpacity="0.3" stroke="#E11D48" strokeWidth="1.5"></polygon>
+                    
+                    <foreignObject x="300" y="150" width="200" height="100">
+                      <div className="bg-surface/90 border border-variance-amber-border rounded shadow-md p-2 flex flex-col font-mono text-[10px]">
+                        <span className="text-variance-amber font-bold mb-1 border-b border-border pb-1">CONFLICT DETECTED</span>
+                        <div className="flex justify-between text-neutral"><span className="font-bold text-primary">Baseline:</span> 1,240 m²</div>
+                        <div className="flex justify-between text-neutral"><span className="font-bold text-primary">Municipal:</span> 1,254 m²</div>
+                        <div className="mt-1 text-conflict-rose text-right">Δ 14.2 m² Variance</div>
+                      </div>
+                    </foreignObject>
+                  </svg>
+                </div>
+
+                {/* Mock Right Panel */}
+                <div className="w-64 border-l border-border bg-surface p-4 flex flex-col gap-3">
+                  <div className="h-6 w-1/2 bg-surface-container-low rounded"></div>
+                  <div className="h-4 w-3/4 bg-background border border-border rounded mt-2"></div>
+                  <div className="h-20 w-full bg-background border border-border rounded mt-4"></div>
+                  <div className="h-10 w-full bg-cadastral-emerald rounded mt-auto opacity-80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 2: The Problem (Zig Zag - Image Right) */}
+        <section id="problem" className="w-full py-24 bg-surface border-t border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              
+              <div className="flex-1">
+                <span className="text-label-spatial-header text-secondary font-bold uppercase tracking-wider mb-2 block">The Challenge</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4">
+                  Siloed datasets breed spatial chaos.
+                </h2>
+                <p className="text-body-lg text-neutral mb-6 leading-relaxed">
+                  When the State Cadastre, Municipal Tax GIS, and Drone registries operate in isolation, overlapping boundaries and conflicting attributes create massive administrative overhead and legal disputes.
+                </p>
+                <ul className="flex flex-col gap-3">
+                  <li className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-conflict-rose shrink-0 mt-0.5">cancel</span>
+                    <span className="text-body-md text-primary font-medium">Overlapping geometries cause property tax leakage.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-conflict-rose shrink-0 mt-0.5">cancel</span>
+                    <span className="text-body-md text-primary font-medium">Mismatched coordinate reference systems (CRS).</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-conflict-rose shrink-0 mt-0.5">cancel</span>
+                    <span className="text-body-md text-primary font-medium">No verifiable audit trail for conflict resolution.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex-1 relative w-full h-[400px]">
+                {/* Layer Stack Illustration */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center perspective-1000">
+                  <div className="w-64 h-40 bg-surface border border-border shadow-lg rounded-xl absolute transform rotate-x-60 -translate-y-16 flex items-center justify-center font-mono text-sm text-primary font-bold">
+                    <span className="material-symbols-outlined text-cadastral-emerald absolute top-2 left-2">description</span>
+                    State Cadastre
+                  </div>
+                  <div className="w-64 h-40 bg-surface border border-border shadow-lg rounded-xl absolute transform rotate-x-60 flex items-center justify-center font-mono text-sm text-primary font-bold">
+                    <span className="material-symbols-outlined text-secondary absolute top-2 left-2">location_city</span>
+                    Municipal GIS
+                  </div>
+                  <div className="w-64 h-40 bg-surface border border-border shadow-lg rounded-xl absolute transform rotate-x-60 translate-y-16 flex items-center justify-center font-mono text-sm text-primary font-bold">
+                    <span className="material-symbols-outlined text-blueprint-blue absolute top-2 left-2">flight</span>
+                    Drone Vectors
+                  </div>
+                  {/* Connecting Line indicating clash */}
+                  <div className="absolute w-1 h-32 bg-conflict-rose blur-[2px] opacity-50"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 3: Intelligent Reconcile (Zig Zag - Image Left) */}
+        <section id="solution" className="w-full py-24 bg-background">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
+              
+              <div className="flex-1 w-full bg-surface rounded-2xl border border-border shadow-tier-1 p-6 relative overflow-hidden h-[400px]">
+                <div className="absolute top-4 left-4 flex gap-2">
+                  <span className="px-2 py-1 bg-background border border-border rounded text-[10px] font-mono text-neutral">Auto-Match</span>
+                  <span className="px-2 py-1 bg-cadastral-emerald-subtle text-cadastral-emerald border border-cadastral-emerald-border rounded text-[10px] font-mono font-bold">Confidence: 98%</span>
+                </div>
+                {/* SVG Merge graphic */}
+                <svg className="w-full h-full mt-8" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 100 50 L 200 50 L 200 150 L 100 150 Z" fill="#059669" fillOpacity="0.2" stroke="#059669" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
+                  <path d="M 120 70 L 220 70 L 220 170 L 120 170 Z" fill="#2563EB" fillOpacity="0.2" stroke="#2563EB" strokeWidth="2" strokeDasharray="4 4" />
+                  <path d="M 250 110 L 280 110 L 270 100 M 280 110 L 270 120" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M 300 80 L 380 80 L 380 160 L 300 160 Z" fill="#059669" stroke="#059669" strokeWidth="2" />
+                  <circle cx="380" cy="80" r="4" fill="#0F172A" />
+                  <circle cx="380" cy="160" r="4" fill="#0F172A" />
+                  <circle cx="300" cy="80" r="4" fill="#0F172A" />
+                  <circle cx="300" cy="160" r="4" fill="#0F172A" />
+                </svg>
+              </div>
+
+              <div className="flex-1">
+                <span className="text-label-spatial-header text-secondary font-bold uppercase tracking-wider mb-2 block">The Solution</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4">
+                  Deterministic spatial reconciliation.
+                </h2>
+                <p className="text-body-lg text-neutral mb-6 leading-relaxed">
+                  GeoSync parses complex multi-format inputs (SHP, KML, GeoJSON) and automatically aligns them using a robust Intersection-over-Union (IoU) engine.
+                </p>
+                <div className="flex flex-col gap-4">
+                  <div className="bg-surface p-4 border border-border rounded-lg shadow-sm">
+                    <span className="font-bold text-primary block mb-1 text-body-md">Topology enforcement</span>
+                    <span className="text-body-sm text-neutral">Snaps floating vertices and eliminates micro-slivers automatically based on defined rulesets.</span>
+                  </div>
+                  <div className="bg-surface p-4 border border-border rounded-lg shadow-sm">
+                    <span className="font-bold text-primary block mb-1 text-body-md">Attribute merging</span>
+                    <span className="text-body-sm text-neutral">Merges tax data with legal baseline boundaries without corrupting original source histories.</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 4: Bento Box Core Benefits */}
+        <section id="engine" className="w-full py-24 bg-surface border-t border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4">Built for institutional rigor.</h2>
+              <p className="text-body-md text-neutral">
+                GeoSync doesn't just guess; it provides transparent scoring, explainable rules, and complete human-in-the-loop oversight.
               </p>
-{/* Technical Precision Checklist */}
-<div className="flex flex-col gap-space-sm mt-space-md font-body-sm text-body-sm">
-<div className="flex items-start gap-space-xs">
-<span className="material-symbols-outlined text-cadastral-emerald text-[18px] shrink-0 mt-0.5">check_circle</span>
-<div>
-<span className="font-semibold text-on-surface">Geometry Similarity (IoU):</span>
-<span className="font-label-data-mono font-bold text-secondary ml-1">86%</span>
-</div>
-</div>
-<div className="flex items-start gap-space-xs">
-<span className="material-symbols-outlined text-cadastral-emerald text-[18px] shrink-0 mt-0.5">check_circle</span>
-<div>
-<span className="font-semibold text-on-surface">Recommendation:</span>
-<span className="text-on-surface-variant ml-1 font-medium">Prefer Cadastral Baseline &amp; Merge Attributes</span>
-</div>
-</div>
-<div className="flex items-start gap-space-xs">
-<span className="material-symbols-outlined text-cadastral-emerald text-[18px] shrink-0 mt-0.5">check_circle</span>
-<div>
-<span className="font-semibold text-on-surface">Audit Trail:</span>
-<span className="text-on-surface-variant ml-1 font-medium">Recorded with Officer Sign-off</span>
-</div>
-</div>
-</div>
-</div>
-{/* Certified Status Tag */}
-<div className="mt-space-md pt-space-sm flex items-center justify-between font-label-data-mono text-label-badge text-on-surface-variant">
-<span>HASH: 8F2A...9C01</span>
-<span className="text-cadastral-emerald font-bold">STATE SEAL VERIFIED</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-{/* SECTION 6: GOVERNANCE & COMPLIANCE */}
-<section className="w-full px-margin-desktop py-space-xl">
-<div className="max-w-6xl mx-auto flex flex-col">
-<div className="text-left">
-<span className="font-label-spatial-header text-label-spatial-header text-secondary uppercase font-bold tracking-widest">GOVERNANCE &amp; COMPLIANCE</span>
-<h2 className="font-headline-lg text-headline-lg text-on-surface font-bold mt-space-xs tracking-tight">Built for Institutional Trust</h2>
-<p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
-          Every harmonized parcel retains complete provenance, capturing confidence scores, evidence ratios, and officer review timestamps.
-        </p>
-</div>
-{/* 4 Institutional Trust Cards */}
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg mt-space-xl">
-{/* Card 1 */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
-<span className="material-symbols-outlined text-[22px]">analytics</span>
-</div>
-<span className="block font-label-spatial-header text-label-spatial-header text-on-surface-variant uppercase mt-space-md font-semibold">SCORING BASIS</span>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">Multimodal Evidence</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
-              Transparent scoring across IoU overlap, centroid proximity, and area proportions.
-            </p>
-</div>
-<div className="mt-space-md font-label-data-mono text-[11px] text-secondary font-semibold">
-            MATH CONFIDENCE INDEX
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
+              {/* Box 1 - Wide */}
+              <div className="md:col-span-2 bg-background border border-border p-8 rounded-2xl shadow-sm flex flex-col justify-between hover:shadow-tier-2 transition-shadow">
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-4 border border-border">
+                    <span className="material-symbols-outlined text-[24px]">analytics</span>
+                  </div>
+                  <h3 className="text-headline-sm font-bold text-primary mb-2">Multimodal Evidence Scoring</h3>
+                  <p className="text-body-md text-neutral max-w-md">
+                    Matches aren't black boxes. Every pair generates a confidence score derived from Area Overlap (IoU), Centroid proximity, and attribute string distance.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <div className="w-full h-2 bg-border rounded-full overflow-hidden">
+                    <div className="w-[88%] h-full bg-cadastral-emerald"></div>
+                  </div>
+                  <div className="flex justify-between mt-2 text-[10px] font-mono text-neutral font-bold uppercase">
+                    <span>Confidence Score</span>
+                    <span className="text-cadastral-emerald">88%</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Box 2 - Tall/Square */}
+              <div className="bg-background border border-border p-8 rounded-2xl shadow-sm flex flex-col hover:shadow-tier-2 transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-4 border border-border">
+                  <span className="material-symbols-outlined text-[24px]">gavel</span>
+                </div>
+                <h3 className="text-headline-sm font-bold text-primary mb-2">Canonical Rules</h3>
+                <p className="text-body-md text-neutral flex-1">
+                  Enforce strict logic priorities. Always preserve the legal baseline geometry while appending secondary attributes.
+                </p>
+              </div>
+
+              {/* Box 3 - Square */}
+              <div className="bg-background border border-border p-8 rounded-2xl shadow-sm flex flex-col hover:shadow-tier-2 transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-4 border border-border">
+                  <span className="material-symbols-outlined text-[24px]">how_to_reg</span>
+                </div>
+                <h3 className="text-headline-sm font-bold text-primary mb-2">Human Oversight</h3>
+                <p className="text-body-md text-neutral flex-1">
+                  Flag discrepancies below tolerance for manual officer review and sign-off.
+                </p>
+              </div>
+
+              {/* Box 4 - Wide */}
+              <div className="md:col-span-2 bg-background border border-border p-8 rounded-2xl shadow-sm flex flex-col md:flex-row items-center gap-8 hover:shadow-tier-2 transition-shadow">
+                <div className="flex-1">
+                  <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-4 border border-border">
+                    <span className="material-symbols-outlined text-[24px]">download</span>
+                  </div>
+                  <h3 className="text-headline-sm font-bold text-primary mb-2">Standard Output</h3>
+                  <p className="text-body-md text-neutral">
+                    Export production-ready, clean datasets conforming to OGC standards. Instantly deployable to national GIS gateways.
+                  </p>
+                </div>
+                <div className="w-full md:w-48 flex flex-col gap-2 shrink-0">
+                  <div className="px-3 py-2 bg-surface border border-border rounded font-mono text-[11px] text-primary font-bold text-center">GeoJSON</div>
+                  <div className="px-3 py-2 bg-surface border border-border rounded font-mono text-[11px] text-primary font-bold text-center">ESRI Shapefile</div>
+                  <div className="px-3 py-2 bg-surface border border-border rounded font-mono text-[11px] text-primary font-bold text-center">KML</div>
+                </div>
+              </div>
+            </div>
           </div>
-</div>
-{/* Card 2 */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
-<span className="material-symbols-outlined text-[22px]">gavel</span>
-</div>
-<span className="block font-label-spatial-header text-label-spatial-header text-on-surface-variant uppercase mt-space-md font-semibold">CANONICAL RULES</span>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">Explainable Actions</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
-              Explicit recommendation logic based on institutional reliability weights.
+        </section>
+
+        {/* SECTION 5: CTA */}
+        <section className="w-full py-24 bg-background border-t border-border">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-6">
+              Ready to unify your land data?
+            </h2>
+            <p className="text-body-lg text-neutral mb-8">
+              Experience the reconciliation engine in action. Open the workstation to review active spatial discrepancies.
             </p>
-</div>
-<div className="mt-space-md font-label-data-mono text-[11px] text-secondary font-semibold">
-            RULESET ENGINE v4
+            <Link href="/workspace" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-surface rounded-lg font-bold text-body-md shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+              Launch GeoSync Workstation
+              <span className="material-symbols-outlined text-[20px]">rocket_launch</span>
+            </Link>
           </div>
-</div>
-{/* Card 3 */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
-<span className="material-symbols-outlined text-[22px]">how_to_reg</span>
-</div>
-<span className="block font-label-spatial-header text-label-spatial-header text-on-surface-variant uppercase mt-space-md font-semibold">HUMAN OVERSIGHT</span>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">Officer Sign-Off</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
-              Officer review queue for any discrepancies exceeding tolerance thresholds.
-            </p>
-</div>
-<div className="mt-space-md font-label-data-mono text-[11px] text-secondary font-semibold">
-            ROLE-BASED APPROVALS
+        </section>
+
+      </main>
+
+      {/* FOOTER */}
+      <footer className="w-full bg-surface border-t border-border py-12">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded bg-primary flex items-center justify-center text-surface shadow-sm">
+              <span className="material-symbols-outlined text-[14px]">layers</span>
+            </div>
+            <span className="font-bold text-body-md text-primary">GeoSync Core</span>
           </div>
-</div>
-{/* Card 4 */}
-<div className="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div className="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
-<span className="material-symbols-outlined text-[22px]">download_for_offline</span>
-</div>
-<span className="block font-label-spatial-header text-label-spatial-header text-on-surface-variant uppercase mt-space-md font-semibold">STANDARD OUTPUT</span>
-<h3 className="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">Certified GeoJSON</h3>
-<p className="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
-              Production-ready GeoJSON and CSV exports for state GIS portals.
-            </p>
-</div>
-<div className="mt-space-md font-label-data-mono text-[11px] text-secondary font-semibold">
-            OGC API CONFORMANT
+          <div className="text-body-sm text-neutral font-medium">
+            © 2026 GeoSync Land Data Intelligence Platform. All sovereign rights reserved.
           </div>
-</div>
-</div>
-</div>
-</section>
-{/* SECTION 7: FINAL CALL TO ACTION */}
-<section className="w-full px-margin-desktop py-space-xl" id="workspace">
-<div className="max-w-5xl mx-auto p-space-xl rounded-xl bg-surface-container-lowest shadow-xl flex flex-col items-center text-center relative overflow-hidden">
-{/* Ambient Blueprint Glow Behind CTA */}
-<div className="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-secondary/5 blur-2xl pointer-events-none"></div>
-<div className="absolute -top-16 -left-16 w-80 h-80 rounded-full bg-secondary-container/5 blur-2xl pointer-events-none"></div>
-<div className="w-12 h-12 rounded-xl bg-blueprint-blue text-secondary flex items-center justify-center mb-space-md shadow-sm">
-<span className="material-symbols-outlined text-[28px]">map</span>
-</div>
-<h2 className="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight max-w-2xl">
-        From fragmented land data to one trusted spatial view.
-      </h2>
-<p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-space-sm">
-        Launch the interactive GeoSync workstation to inspect candidate matches, resolve discrepancies, and export harmonized land parcels.
-      </p>
-<div className="mt-space-lg">
-<a className="inline-flex items-center gap-space-xs px-space-xl py-space-md rounded-lg bg-secondary text-on-secondary font-headline-sm text-headline-sm font-semibold shadow-md hover:bg-secondary-container transition-all" href="#workspace">
-<span>Open GeoSync Workspace</span>
-<span className="material-symbols-outlined text-[20px]">arrow_forward</span>
-</a>
-</div>
-</div>
-</section>
-</div>
-</main><footer className="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(0,0,0,0.02)]"><div className="w-full px-margin-desktop py-space-xl"><div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg pb-space-lg"><div className="flex flex-col gap-space-xs"><div className="flex items-center gap-space-sm"><div className="w-7 h-7 rounded bg-secondary-container flex items-center justify-center text-on-secondary-container"><span className="material-symbols-outlined text-[18px]">polyline</span></div><span className="font-headline-sm text-headline-sm text-on-surface font-bold">GeoSync Sovereign Core</span></div><p className="font-body-sm text-body-sm text-on-surface-variant max-w-xl">Institutional Cadastral Precision Platform providing automated spatial polygon harmonization, multi-tier survey discrepancy resolution, and cryptographic auditability for national land registries.</p></div><div className="flex flex-wrap items-center gap-space-md"><div className="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-cadastral-emerald-subtle text-cadastral-emerald font-label-badge text-label-badge"><span className="material-symbols-outlined text-[16px]">verified</span><span>EPSG:4326 COMPLIANT</span></div><div className="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-blueprint-blue text-secondary font-label-badge text-label-badge"><span className="material-symbols-outlined text-[16px]">sync_alt</span><span>RECON ENGINE v4.8 ACTIVE</span></div><div className="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-variance-amber-subtle text-variance-amber font-label-badge text-label-badge"><span className="material-symbols-outlined text-[16px]">shield</span><span>AUDIT LOG HARMONIZED</span></div></div></div><div className="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-md"><div className="font-label-data-mono text-label-data-mono text-on-surface-variant">© 2025 GeoSync Land Data Intelligence Platform. National Geospatial Division. All sovereign rights reserved.</div><div className="flex items-center gap-space-lg font-body-sm text-body-sm text-on-surface-variant"><a className="hover:text-on-surface transition-colors" data-path="trust-and-traceability" href="#">Cadastral Charter</a><a className="hover:text-on-surface transition-colors" data-path="trust-and-traceability" href="#">Spatial Accuracy Index</a><a className="hover:text-on-surface transition-colors" data-path="trust-and-traceability" href="#">Security &amp; Sovereignty</a></div></div></div></footer>
-    </>
+          <div className="flex gap-4 text-body-sm font-medium text-neutral">
+            <Link href="#" className="hover:text-primary transition-colors">Documentation</Link>
+            <Link href="#" className="hover:text-primary transition-colors">Privacy</Link>
+            <Link href="#" className="hover:text-primary transition-colors">Terms</Link>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
