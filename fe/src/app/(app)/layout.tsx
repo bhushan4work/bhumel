@@ -1,7 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
       <div className="flex flex-1 overflow-hidden">
@@ -23,10 +28,24 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div>
               <div className="text-label-spatial-header text-neutral uppercase mb-2">Overview</div>
               <div className="flex flex-col gap-1">
-                <Link href="/dashboard" className="px-3 py-1.5 bg-surface-container-low text-primary font-semibold text-body-sm rounded-md transition-colors">
+                <Link 
+                  href="/dashboard" 
+                  className={`px-3 py-1.5 font-semibold text-body-sm rounded-md transition-colors ${
+                    pathname === "/dashboard" 
+                      ? "bg-surface-container-low text-primary" 
+                      : "text-neutral hover:bg-surface-container-low hover:text-primary"
+                  }`}
+                >
                   Dashboard
                 </Link>
-                <Link href="#" className="px-3 py-1.5 text-neutral hover:bg-surface-container-low hover:text-primary font-medium text-body-sm rounded-md transition-colors">
+                <Link 
+                  href="/reports" 
+                  className={`px-3 py-1.5 font-semibold text-body-sm rounded-md transition-colors ${
+                    pathname === "/reports" 
+                      ? "bg-surface-container-low text-primary" 
+                      : "text-neutral hover:bg-surface-container-low hover:text-primary"
+                  }`}
+                >
                   Reports
                 </Link>
               </div>
@@ -35,10 +54,24 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div>
               <div className="text-label-spatial-header text-neutral uppercase mb-2">Data</div>
               <div className="flex flex-col gap-1">
-                <Link href="#" className="px-3 py-1.5 text-neutral hover:bg-surface-container-low hover:text-primary font-medium text-body-sm rounded-md transition-colors">
+                <Link 
+                  href="/datasets" 
+                  className={`px-3 py-1.5 font-semibold text-body-sm rounded-md transition-colors ${
+                    pathname === "/datasets" 
+                      ? "bg-surface-container-low text-primary" 
+                      : "text-neutral hover:bg-surface-container-low hover:text-primary"
+                  }`}
+                >
                   Data Sources
                 </Link>
-                <Link href="#" className="px-3 py-1.5 text-neutral hover:bg-surface-container-low hover:text-primary font-medium text-body-sm rounded-md transition-colors">
+                <Link 
+                  href="/harmonized" 
+                  className={`px-3 py-1.5 font-semibold text-body-sm rounded-md transition-colors ${
+                    pathname === "/harmonized" 
+                      ? "bg-surface-container-low text-primary" 
+                      : "text-neutral hover:bg-surface-container-low hover:text-primary"
+                  }`}
+                >
                   Harmonized Data
                 </Link>
               </div>
@@ -47,14 +80,35 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div>
               <div className="text-label-spatial-header text-neutral uppercase mb-2">Harmonization</div>
               <div className="flex flex-col gap-1">
-                <Link href="#" className="px-3 py-1.5 text-neutral hover:bg-surface-container-low hover:text-primary font-medium text-body-sm rounded-md transition-colors">
+                <Link 
+                  href="/workspace" 
+                  className={`px-3 py-1.5 font-semibold text-body-sm rounded-md transition-colors ${
+                    pathname === "/workspace" 
+                      ? "bg-surface-container-low text-primary" 
+                      : "text-neutral hover:bg-surface-container-low hover:text-primary"
+                  }`}
+                >
                   Workspace
                 </Link>
-                <Link href="#" className="px-3 py-1.5 text-neutral hover:bg-surface-container-low hover:text-primary font-medium text-body-sm rounded-md transition-colors flex justify-between items-center">
+                <Link 
+                  href="/match-review" 
+                  className={`px-3 py-1.5 font-semibold text-body-sm rounded-md transition-colors flex justify-between items-center ${
+                    pathname === "/match-review" 
+                      ? "bg-surface-container-low text-primary" 
+                      : "text-neutral hover:bg-surface-container-low hover:text-primary"
+                  }`}
+                >
                   Match Review
                   <span className="bg-variance-amber-subtle text-variance-amber text-[10px] px-1.5 rounded-sm font-bold">12</span>
                 </Link>
-                <Link href="#" className="px-3 py-1.5 text-neutral hover:bg-surface-container-low hover:text-primary font-medium text-body-sm rounded-md transition-colors flex justify-between items-center">
+                <Link 
+                  href="/conflicts" 
+                  className={`px-3 py-1.5 font-semibold text-body-sm rounded-md transition-colors flex justify-between items-center ${
+                    pathname === "/conflicts" 
+                      ? "bg-surface-container-low text-primary" 
+                      : "text-neutral hover:bg-surface-container-low hover:text-primary"
+                  }`}
+                >
                   Conflicts
                   <span className="bg-conflict-rose-subtle text-conflict-rose text-[10px] px-1.5 rounded-sm font-bold">3</span>
                 </Link>
@@ -64,7 +118,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div>
               <div className="text-label-spatial-header text-neutral uppercase mb-2">Output</div>
               <div className="flex flex-col gap-1">
-                <Link href="#" className="px-3 py-1.5 text-neutral hover:bg-surface-container-low hover:text-primary font-medium text-body-sm rounded-md transition-colors">
+                <Link 
+                  href="/gis" 
+                  className={`px-3 py-1.5 font-semibold text-body-sm rounded-md transition-colors ${
+                    pathname === "/gis" 
+                      ? "bg-surface-container-low text-primary" 
+                      : "text-neutral hover:bg-surface-container-low hover:text-primary"
+                  }`}
+                >
                   GIS Explorer
                 </Link>
               </div>
