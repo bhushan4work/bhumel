@@ -1,8 +1,8 @@
 import React from "react";
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export function Card({ className, ...props }: CardProps) {
+
+export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={`bg-surface text-primary rounded-md border border-border shadow-tier-1 p-lg ${
