@@ -91,9 +91,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                   Workspace
                 </Link>
                 <Link 
-                  href="/match-review" 
+                  href="/matches" 
                   className={`px-3 py-1.5 font-semibold text-body-sm rounded-md transition-colors flex justify-between items-center ${
-                    pathname === "/match-review" 
+                    pathname === "/matches" 
                       ? "bg-surface-container-low text-primary" 
                       : "text-neutral hover:bg-surface-container-low hover:text-primary"
                   }`}
