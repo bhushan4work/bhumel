@@ -15,8 +15,8 @@ export default function LandingPage() {
           </div>
           
           <nav className="hidden md:flex items-center gap-6 text-body-sm font-medium text-neutral">
-            <Link href="#problem" className="hover:text-primary transition-colors">The Problem</Link>
-            <Link href="#solution" className="hover:text-primary transition-colors">How It Works</Link>
+            <Link href="#problem" className="hover:text-primary transition-colors">The Disconnect</Link>
+            <Link href="#solution" className="hover:text-primary transition-colors">Our Approach</Link>
             <Link href="#engine" className="hover:text-primary transition-colors">Reconciliation Engine</Link>
           </nav>
 
@@ -52,13 +52,13 @@ export default function LandingPage() {
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center mt-12">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border shadow-sm mb-6 text-[11px] font-bold uppercase tracking-wider text-secondary">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-              GeoSync Recon Engine v4.8 Live
+              GeoSync Harmonization Engine Active
             </div>
             <h1 className="text-5xl md:text-6xl font-extrabold text-primary tracking-tight leading-[1.1] mb-6">
-              Establish a single spatial truth for institutional land data.
+              Unify fragmented spatial data into a single source of truth.
             </h1>
             <p className="text-lg md:text-xl text-neutral max-w-2xl mb-10 leading-relaxed">
-              Automatically harmonize conflicting cadastral surveys, municipal records, and drone registries into a cryptographically auditable canonical baseline.
+              Intelligently reconcile disparate cadastral maps, drone imagery, and municipal revenue datasets to build a reliable, conflict-free geospatial foundation.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <Link href="/workspace" className="w-full sm:w-auto px-8 py-3.5 bg-secondary text-on-secondary rounded-lg font-semibold text-body-md shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
@@ -135,25 +135,25 @@ export default function LandingPage() {
             <div className="flex flex-col lg:flex-row items-center gap-16">
               
               <div className="flex-1">
-                <span className="text-label-spatial-header text-secondary font-bold uppercase tracking-wider mb-2 block">The Challenge</span>
+                <span className="text-label-spatial-header text-secondary font-bold uppercase tracking-wider mb-2 block">The Disconnect</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4">
-                  Siloed datasets breed spatial chaos.
+                  Isolated mapping systems create geometric conflict.
                 </h2>
                 <p className="text-body-lg text-neutral mb-6 leading-relaxed">
-                  When the State Cadastre, Municipal Tax GIS, and Drone registries operate in isolation, overlapping boundaries and conflicting attributes create massive administrative overhead and legal disputes.
+                  Because urban and rural land registries, utility networks, and municipal databases are often maintained independently, their overlapping geometries and conflicting schemas lead to administrative bottlenecks and inaccurate property assessments.
                 </p>
                 <ul className="flex flex-col gap-3">
                   <li className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-conflict-rose shrink-0 mt-0.5">cancel</span>
-                    <span className="text-body-md text-primary font-medium">Overlapping geometries cause property tax leakage.</span>
+                    <span className="text-body-md text-primary font-medium">Misaligned parcel boundaries result in revenue leakage.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-conflict-rose shrink-0 mt-0.5">cancel</span>
-                    <span className="text-body-md text-primary font-medium">Mismatched coordinate reference systems (CRS).</span>
+                    <span className="text-body-md text-primary font-medium">Inconsistent schemas and projection systems (CRS).</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-conflict-rose shrink-0 mt-0.5">cancel</span>
-                    <span className="text-body-md text-primary font-medium">No verifiable audit trail for conflict resolution.</span>
+                    <span className="text-body-md text-primary font-medium">Lack of a clear, traceable history for boundary adjustments.</span>
                   </li>
                 </ul>
               </div>
@@ -206,21 +206,21 @@ export default function LandingPage() {
               </div>
 
               <div className="flex-1">
-                <span className="text-label-spatial-header text-secondary font-bold uppercase tracking-wider mb-2 block">The Solution</span>
+                <span className="text-label-spatial-header text-secondary font-bold uppercase tracking-wider mb-2 block">Our Approach</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4">
-                  Deterministic spatial reconciliation.
+                  Confidence-aware topological alignment.
                 </h2>
                 <p className="text-body-lg text-neutral mb-6 leading-relaxed">
-                  GeoSync parses complex multi-format inputs (SHP, KML, GeoJSON) and automatically aligns them using a robust Intersection-over-Union (IoU) engine.
+                  GeoSync ingests diverse geospatial formats and accurately correlates them utilizing advanced geometric matching and Intersection-over-Union (IoU) calculations.
                 </p>
                 <div className="flex flex-col gap-4">
                   <div className="bg-surface p-4 border border-border rounded-lg shadow-sm">
-                    <span className="font-bold text-primary block mb-1 text-body-md">Topology enforcement</span>
-                    <span className="text-body-sm text-neutral">Snaps floating vertices and eliminates micro-slivers automatically based on defined rulesets.</span>
+                    <span className="font-bold text-primary block mb-1 text-body-md">Geometric normalization</span>
+                    <span className="text-body-sm text-neutral">Automatically resolves micro-slivers, snaps vertices, and flags severe topological anomalies.</span>
                   </div>
                   <div className="bg-surface p-4 border border-border rounded-lg shadow-sm">
-                    <span className="font-bold text-primary block mb-1 text-body-md">Attribute merging</span>
-                    <span className="text-body-sm text-neutral">Merges tax data with legal baseline boundaries without corrupting original source histories.</span>
+                    <span className="font-bold text-primary block mb-1 text-body-md">Contextual enrichment</span>
+                    <span className="text-body-sm text-neutral">Safely links external metadata to canonical parcel geometries while preserving the original data provenance.</span>
                   </div>
                 </div>
               </div>
@@ -233,9 +233,9 @@ export default function LandingPage() {
         <section id="engine" className="w-full py-24 bg-surface border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4">Built for institutional rigor.</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4">Designed for accountable administration.</h2>
               <p className="text-body-md text-neutral">
-                GeoSync doesn't just guess; it provides transparent scoring, explainable rules, and complete human-in-the-loop oversight.
+                GeoSync avoids black-box automation by providing clear match confidence metrics, explicit reconciliation rules, and dedicated workflows for manual review.
               </p>
             </div>
 
@@ -246,9 +246,9 @@ export default function LandingPage() {
                   <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-4 border border-border">
                     <span className="material-symbols-outlined text-[24px]">analytics</span>
                   </div>
-                  <h3 className="text-headline-sm font-bold text-primary mb-2">Multimodal Evidence Scoring</h3>
+                  <h3 className="text-headline-sm font-bold text-primary mb-2">Transparent Confidence Metrics</h3>
                   <p className="text-body-md text-neutral max-w-md">
-                    Matches aren't black boxes. Every pair generates a confidence score derived from Area Overlap (IoU), Centroid proximity, and attribute string distance.
+                    Every geometric match is evaluated and scored based on objective parameters like overlapping area (IoU), centroid distance, and metadata similarity.
                   </p>
                 </div>
                 <div className="mt-8">
@@ -267,9 +267,9 @@ export default function LandingPage() {
                 <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-4 border border-border">
                   <span className="material-symbols-outlined text-[24px]">gavel</span>
                 </div>
-                <h3 className="text-headline-sm font-bold text-primary mb-2">Canonical Rules</h3>
+                <h3 className="text-headline-sm font-bold text-primary mb-2">Deterministic Conflict Resolution</h3>
                 <p className="text-body-md text-neutral flex-1">
-                  Enforce strict logic priorities. Always preserve the legal baseline geometry while appending secondary attributes.
+                  Apply strict operational logic. Ensure that authoritative baseline geometries remain unmodified while incorporating supplementary municipal data.
                 </p>
               </div>
 
@@ -278,9 +278,9 @@ export default function LandingPage() {
                 <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-4 border border-border">
                   <span className="material-symbols-outlined text-[24px]">how_to_reg</span>
                 </div>
-                <h3 className="text-headline-sm font-bold text-primary mb-2">Human Oversight</h3>
+                <h3 className="text-headline-sm font-bold text-primary mb-2">Expert-in-the-Loop Review</h3>
                 <p className="text-body-md text-neutral flex-1">
-                  Flag discrepancies below tolerance for manual officer review and sign-off.
+                  Automatically isolate ambiguous matches and severe boundary conflicts for manual evaluation by authorized personnel.
                 </p>
               </div>
 
@@ -290,9 +290,9 @@ export default function LandingPage() {
                   <div className="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-4 border border-border">
                     <span className="material-symbols-outlined text-[24px]">download</span>
                   </div>
-                  <h3 className="text-headline-sm font-bold text-primary mb-2">Standard Output</h3>
+                  <h3 className="text-headline-sm font-bold text-primary mb-2">Interoperable Export Formats</h3>
                   <p className="text-body-md text-neutral">
-                    Export production-ready, clean datasets conforming to OGC standards. Instantly deployable to national GIS gateways.
+                    Generate standardized, topologically sound datasets ready for seamless integration into existing government geospatial portals.
                   </p>
                 </div>
                 <div className="w-full md:w-48 flex flex-col gap-2 shrink-0">
@@ -309,10 +309,10 @@ export default function LandingPage() {
         <section className="w-full py-24 bg-background border-t border-border">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight mb-6">
-              Ready to unify your land data?
+              Begin reconciling your spatial records.
             </h2>
             <p className="text-body-lg text-neutral mb-8">
-              Experience the reconciliation engine in action. Open the workstation to review active spatial discrepancies.
+              See the harmonization process firsthand. Access the interactive workspace to evaluate geometry matches and resolve conflicts.
             </p>
             <Link href="/workspace" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-surface rounded-lg font-bold text-body-md shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
               Launch GeoSync Workstation
