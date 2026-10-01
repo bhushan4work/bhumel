@@ -7,7 +7,7 @@ export default function DashboardPage() {
       {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
         <div>
-          <h1 className="text-headline-lg font-bold text-primary tracking-tight">GeoSync Overview</h1>
+          <h1 className="text-headline-lg font-bold text-primary tracking-tight">Bhumel Overview</h1>
           <p className="text-body-md text-neutral mt-2 max-w-2xl">
             Monitor datasets, spatial coverage, harmonization progress, and officer review priorities.
           </p>

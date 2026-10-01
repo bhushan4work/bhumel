@@ -1,9 +1,9 @@
-# GeoSync
+# Bhumel
 
 **Institutional Cadastral Precision Platform**  
 *Providing automated spatial polygon harmonization, multi-tier survey discrepancy resolution, and cryptographic auditability for national land registries.*
 
-GeoSync is an integration and reconciliation engine designed to resolve the disjointed nature of modern land data. By intelligently merging State Cadastre baselines, Municipal Tax GIS records, and Drone Registries, GeoSync establishes a single, conflict-free spatial truth without ever overwriting authoritative historical records.
+Bhumel is an integration and reconciliation engine designed to resolve the disjointed nature of modern land data. By intelligently merging State Cadastre baselines, Municipal Tax GIS records, and Drone Registries, Bhumel establishes a single, conflict-free spatial truth without ever overwriting authoritative historical records.
 
 ---
 
@@ -16,9 +16,9 @@ Urban and rural land registries, utility networks, and municipal databases are o
 
 ## Our Approach
 
-GeoSync ingests diverse geospatial formats (SHP, KML, GeoJSON) and normalizes them into a unified schema. It utilizes deterministic geometric matching and advanced topological calculations (like Intersection-over-Union) to identify conflicts.
+Bhumel ingests diverse geospatial formats (SHP, KML, GeoJSON) and normalizes them into a unified schema. It utilizes deterministic geometric matching and advanced topological calculations (like Intersection-over-Union) to identify conflicts.
 
-We prioritize **accountable administration** over black-box automation. GeoSync acts as a technical advisor—not a legal adjudicator.
+We prioritize **accountable administration** over black-box automation. Bhumel acts as a technical advisor—not a legal adjudicator.
 
 ### Key Capabilities
 
@@ -33,7 +33,7 @@ We prioritize **accountable administration** over black-box automation. GeoSync 
 
 ## System Architecture (Proposed)
 
-GeoSync is designed to operate as a scalable pipeline:
+Bhumel is designed to operate as a scalable pipeline:
 
 1.  **Immutable Intake:** Parses geometry, extracts manifests, and normalizes CRS.
 2.  **Candidate Generation & Matching:** Employs spatial indexing and evaluated matching models (e.g., XGBoost) to pair corresponding features.
@@ -57,7 +57,7 @@ This repository contains the **Frontend MVP** developed for the SIH26013 problem
 
 **Important Disclaimers:**
 *   **Data Usage:** Because authoritative government datasets are not available, this prototype uses **strictly synthetic, fictitious data** (e.g., bounding boxes over SpaceNet imagery) to demonstrate pipeline behavior and error recovery. 
-*   **Operational Scope:** GeoSync does **not** adjudicate ownership, automatically approve legal boundaries, or silently overwrite source geometries. It provides a technical, evidence-based integration proposal for human review.
+*   **Operational Scope:** Bhumel does **not** adjudicate ownership, automatically approve legal boundaries, or silently overwrite source geometries. It provides a technical, evidence-based integration proposal for human review.
 *   **Status:** The frontend UI (Command Center, GIS Explorer, Harmonization Workspace, Reports) is currently implemented with static data to validate the user experience, spatial logic hierarchy, and reconciliation workflows.
 
 ---

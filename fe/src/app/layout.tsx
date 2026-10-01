@@ -13,7 +13,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GeoSync Land Data Intelligence",
+  title: "Bhumel Land Data Intelligence",
   description: "Institutional Cadastral Precision Platform",
 };
 

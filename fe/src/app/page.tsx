@@ -11,7 +11,7 @@ export default function LandingPage() {
             <div className="w-8 h-8 rounded bg-primary flex items-center justify-center text-surface shadow-sm">
               <span className="material-symbols-outlined text-[20px]">layers</span>
             </div>
-            <span className="font-bold text-headline-sm tracking-tight text-primary">GeoSync</span>
+            <span className="font-bold text-headline-sm tracking-tight text-primary">Bhumel</span>
           </div>
           
           <nav className="hidden md:flex items-center gap-6 text-body-sm font-medium text-neutral">
@@ -52,7 +52,7 @@ export default function LandingPage() {
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center mt-12">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border shadow-sm mb-6 text-[11px] font-bold uppercase tracking-wider text-secondary">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-              GeoSync Harmonization Engine Active
+              Bhumel Harmonization Engine Active
             </div>
             <h1 className="text-5xl md:text-6xl font-extrabold text-primary tracking-tight leading-[1.1] mb-6">
               Unify fragmented spatial data into a single source of truth.
@@ -83,7 +83,7 @@ export default function LandingPage() {
                   <div className="w-2.5 h-2.5 rounded-full bg-cadastral-emerald"></div>
                 </div>
                 <div className="mx-auto bg-background border border-border rounded text-[10px] font-mono px-4 py-0.5 text-neutral">
-                  geosync.gov.in/workspace/KHASRA-4482
+                  bhumel.gov.in/workspace/KHASRA-4482
                 </div>
               </div>
 
@@ -211,7 +211,7 @@ export default function LandingPage() {
                   Confidence-aware topological alignment.
                 </h2>
                 <p className="text-body-lg text-neutral mb-6 leading-relaxed">
-                  GeoSync ingests diverse geospatial formats and accurately correlates them utilizing advanced geometric matching and Intersection-over-Union (IoU) calculations.
+                  Bhumel ingests diverse geospatial formats and accurately correlates them utilizing advanced geometric matching and Intersection-over-Union (IoU) calculations.
                 </p>
                 <div className="flex flex-col gap-4">
                   <div className="bg-surface p-4 border border-border rounded-lg shadow-sm">
@@ -235,7 +235,7 @@ export default function LandingPage() {
             <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight mb-4">Designed for accountable administration.</h2>
               <p className="text-body-md text-neutral">
-                GeoSync avoids black-box automation by providing clear match confidence metrics, explicit reconciliation rules, and dedicated workflows for manual review.
+                Bhumel avoids black-box automation by providing clear match confidence metrics, explicit reconciliation rules, and dedicated workflows for manual review.
               </p>
             </div>
 
@@ -315,7 +315,7 @@ export default function LandingPage() {
               See the harmonization process firsthand. Access the interactive workspace to evaluate geometry matches and resolve conflicts.
             </p>
             <Link href="/workspace" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-surface rounded-lg font-bold text-body-md shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
-              Launch GeoSync Workstation
+              Launch Bhumel Workstation
               <span className="material-symbols-outlined text-[20px]">rocket_launch</span>
             </Link>
           </div>
@@ -330,10 +330,10 @@ export default function LandingPage() {
             <div className="w-6 h-6 rounded bg-primary flex items-center justify-center text-surface shadow-sm">
               <span className="material-symbols-outlined text-[14px]">layers</span>
             </div>
-            <span className="font-bold text-body-md text-primary">GeoSync Core</span>
+            <span className="font-bold text-body-md text-primary">Bhumel Core</span>
           </div>
           <div className="text-body-sm text-neutral font-medium">
-            © 2026 GeoSync Land Data Intelligence Platform. All sovereign rights reserved.
+            © 2026 Bhumel Land Data Intelligence Platform. All sovereign rights reserved.
           </div>
           <div className="flex gap-4 text-body-sm font-medium text-neutral">
             <Link href="#" className="hover:text-primary transition-colors">Documentation</Link>
